@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <style>
+        body
+        {
+            text-align: center;
+        }
+        #container
+        {
+            background-color: gray;
+            width: 85%;
+            min-height: 600px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px;
+        }
+        #sideNav ul 
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(32, 32, 32);
+            overflow: hidden;
+        }
+        #topNav ul 
+        {
+            list-style-type: none;
+            margin: 20px;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(32, 32, 32);
+        }
+
+        #topNav
+        {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #topNav li 
+        {
+            float: left;
+        }
+
+        li a 
+        {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }   
+
+        li a:hover 
+        {
+            background-color: rgb(87, 87, 87);
+            color: black;
+        }
+
+        .active
+        {
+            background-color: rgb(216, 10, 10);
+        }
+        #sideNav
+        {
+            text-align: left;
+            width: 22%;
+            min-height: 500px;
+            background-color: rgb(32, 32, 32);;
+            float: left;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+        #info
+        {
+            width: 70%;
+            float: right;
+            background-color: white;
+            min-height: 500px;
+            margin-right: 20px;
+        }
+        p
+        {
+            padding: 25px;
+            padding-bottom: 0%;
+            padding-top: 0%;
+            text-align: left;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <h1>Home Student</h1>
+
+    <div id="container">
+        <div id="topNav">
+            
+            <ul>
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="#">Announcement</a></li>
+                <li><a href="#">Homework</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="gradeS.html">Grade</a></li>
+            </ul>
+        </div>
+        <div id="sideNav">
+            <h3 style="margin: 0; color: black; text-align: center; background-color: lightgray;">Course:</h3>
+            <ul>
+                <li><a href="#">Physic 1</a></li>
+                <li><a href="#">Calculus 1</a></li>
+                <li><a href="#">Structure Prog.</a></li>
+                <li><a href="#">Macro Econ.</a></li>
+                
+            </ul>
+
+        </div>
+        <div id="info">
+            <h3 style="margin: 0; color: black; text-align: center; background-color: lightgray;">Announcement:</h3>
+            <p> All classes will be canceled. <br>
+                All students who sent an email to me will automatically recieved an A for the Course.</p>
+
+        </div>
+    </div>
+    
+</body>
+</html>
