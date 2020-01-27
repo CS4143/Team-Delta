@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <style>
+        html 
+        { 
+            background: url("pic/tri.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: Helvetica Neue,helvetica,arial,sans-serif;
+        }
+        body
+        {
+            text-align: center;
+            color: black;
+            font-family: Helvetica Neue,helvetica,arial,sans-serif;
+            
+            
+        }
+        #loginbox
+        {
+            clear: both;
+            background-color: white;
+            width: auto;
+            max-width: 100%;
+            height: 63%;
+            padding: 0px 0px;
+            position: relative;
+            color: black;
+
+            border-style: solid;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            border-bottom: 0;
+            border-width: 3px;
+            
+            border-color:  #cf1717;
+        }
+        #logo
+        {
+            width: 40%;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            position: relative;
+            
+            border-color:  #cf1717;
+            overflow: hidden;
+            border-radius: 15px;
+     
+        }
+
+        .logoClass img
+        {
+            max-width: 100%;
+            max-height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #name
+        {
+            min-width: fit-content;
+            background-color: white;
+            color: black;
+
+            border-style: solid;
+            border-width: 3px;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            border-color:  #cf1717;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+
+
+         
+            border-radius: 15px;
+           
+        }
+        #container
+        {
+            background-color: white;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 600px;
+            font-family: 'Times New Roman', Times, serif;
+            position: relative;
+            border-radius: 15px;
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            font-family: Helvetica Neue,helvetica,arial,sans-serif;
+            
+        }
+        #footer
+        {
+            width: 100%;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            clear: both;
+            text-align: center;
+            color: black;
+        }
+        strong
+        {
+            font-size: xx-large;
+            color:  #cf1717;
+        }
+        #top
+        {
+            
+            width: 100%;
+            height: 112px;
+            border-radius: 15px;
+        }
+
+        .inputBox
+        {
+            width: 300px;
+            display: block;
+            margin: 5px auto;
+            padding: 5px;
+            height: 30px;
+            background-color: whitesmoke;
+            border: none;
+            font-size: 1.1875rem;
+    
+            border-bottom: 1px solid black;
+
+            overflow: visible;
+ 
+            
+        }
+        .inputBox:focus
+        {
+            border: 2px solid #cf1717;
+            background-color: rgb(255, 187, 187);
+            color: black;
+            outline: none;
+        }
+        button, input[type="submit"]
+        {
+            
+            border-width: 2px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            width: 180px;
+            background-color: #cf1717;
+            color: white;
+            border-radius: 25px;
+            border-color: white;
+            border-style: solid;
+            outline: none;
+            
+        }
+
+        button:hover, input[type="submit"]:hover
+        {
+            
+            border-color: #cf1717;
+            border-style: solid;
+            border-width: 2px;
+            background-color: white;
+            color: black;
+        }
+
+        hr
+        {
+            color: #cf1717;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+        .popSignIn
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .popForget
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .popSignUp
+        {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        @media only screen and (max-width: 600px) 
+        {
+            #container
+            {
+                width: 95%;
+                height: fit-content;
+                padding-bottom: 5px;
+            }
+        }
+
+        .close, .closeForget, .closeSU
+        {
+            position: absolute;
+            top: 0;
+            right: 14px;
+            font-size: 43px;
+            transform: rotate(45deg);
+            color: black;
+            cursor: pointer;
+        }
+
+        input[type=radio] 
+        {
+            display:none; 
+            margin:10px;
+        }
+
+        /*
+        Change the look'n'feel of labels (which are adjacent to radiobuttons).
+        Add some margin, padding to label
+        */
+        input[type=radio] + label 
+        {
+            display:inline-block;
+            margin:-2px;
+            padding: 4px 12px;
+            background-color: whitesmoke;
+            border-radius: 25px;
+            border: 1px whitesmoke solid;
+
+        }
+        input[type=radio] + label:hover
+        {
+            border: 1px #cf1717 dashed;
+        } 
+        /*
+        Change background color for label next to checked radio button
+        to make it look like highlighted button
+        */
+        input[type=radio]:checked + label 
+        { 
+            background-image: none;
+            background-color:#cf1717;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="name">
+            <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
+            <hr size="3">
+        </div>
+        <br>
+        <button id="signin">SIGN IN</button> 
+        <br><br>
+        <button id="signup">SIGN UP</button>
+        <div id="footer">
+            Copyright &copy; drawHW 2020
+        </div> 
+    </div>
+    <div class="popSignIn">
+        <div id="container">
+
+            <div class="close">+</div>
+            <div id="logo" class="logoClass">
+                <img src="pic/drawHW.png" >
+            </div >
+            <hr style="margin-top: 0; padding-top: 0;">
+
+            <div id="loginbox">
+                <h2 style="margin-top:0;">SIGN IN</h2>
+                <form name="login" onsubmit="return run();">
+                    
+                    
+                    <input type="radio" name="account" value="student" id="student" checked> 
+                    <label for="student">Student</label>
+                    
+                    
+                    <input type="radio" name="account" value="faculty" id="faculty">
+                    <label for="faculty">Faculty</label> 
+                    
+                    <br><br>
+                    
+                    <p class="table">
+                    <label for="username">USERNAME </label><br>
+                    <input class="inputBox" type="text" id="username" name="username" placeholder="Username" required> 
+                    </p>
+                    <p class="table">
+                    <label for="password">PASSWORD </label> <br>
+                    <input class="inputBox" type="password" name="password" id="password" placeholder="Password" required>
+                    <br></p>
+
+                    <input type="submit" name="submit" id="submit" value="Sign In""> <br><br>
+                </form>
+
+                <button id="reset">Reset Password</button>  
+            </div>
+        </div> 
+    </div>
+
+    <div class="popForget">
+        <div id="container">
+
+            <div class="closeForget">+</div>
+            <div id="logo" class="logoClass">
+                <img src="pic/drawHW.png" >
+            </div >
+    
+            <hr style="margin-top: 0; padding-top: 0;">
+
+            <div id="loginbox">
+                <h2 style="margin-top:0;">RESET PASSWORD</h2>
+                <form name="forget" onsubmit="">
+                    
+                    
+                    <input type="radio" name="accountF" value="student" id="studentF" checked> 
+                    <label for="studentF">Student</label>
+                    
+                    <input type="radio" name="accountF" value="faculty" id="facultyF">
+                    <label for="facultyF">Faculty</label> 
+                    
+                    <br><br>
+                    
+                    <p class="table">
+                    <label for="usernameF">USERNAME </label><br>
+                    <input class="inputBox" type="text" id="usernameF" name="usernameF" placeholder="Username" required> 
+                    </p>
+                    <p class="table">
+                    <label for="emailF">EMAIL </label> <br>
+                    <input class="inputBox" type="email" name="emailF" id="emailF" placeholder="EMAIL" required>
+                    <br></p>
+
+                    <input type="submit" name="submitF" id="submitF" value="SUBMIT""> <br><br><br>
+                </form>
+
+                <p>After submit you will recieve an email from us.</p>
+             
+            </div>
+        </div> 
+    </div>
+
+    <div class="popSignUp">
+        <div id="container">
+
+            <div class="closeSU">+</div>
+            
+                <img style="width: 30%; float: left;"  src="pic/drawHW.png" >
+                <h2 style="margin-top: 35px; color:black; width: ;">SIGN UP</h2>
+            
+            
+                
+            <div id="loginbox">
+                <hr>
+                <form name="login" onsubmit="">
+                
+                    
+                    <input type="radio" name="accountSU" value="studentSU" id="studentSU" checked> 
+                    <label for="studentSU">Student</label>
+      
+                    
+                    <input type="radio" name="accountSU" value="facultySU" id="facultySU">
+                    <label for="facultySU">Faculty</label> 
+                    
+                    <br>
+                    
+                    <p>
+                        <label for="emailSU">EMAIL</label> &emsp;&nbsp;&nbsp;
+                        <input class="inputBox" type="email" id="emailSU" name="emailSU" placeholder="email address" required> 
+                    </p>
+                    <p>
+                        <label for="usernameSU">USERNAME</label> 
+                        <input class="inputBox" type="text" id="usernameSU" name="usernameSU" placeholder="Username" required> 
+                    </p>
+                    <p>
+                        <label for="passwordSU">PASSWORD</label> &nbsp;
+                        <input class="inputBox" type="password" name="passwordSU" id="passwordSU" placeholder="Password" required>
+                    </p>
+                    <p>
+                        <label for="cPasswordSU">CONFIRM PASSWORD</label> &nbsp; &nbsp;
+                        <input class="inputBox" type="password" name="cPasswordSU" id="cPasswordSU" placeholder="Confirm Password" required>
+                    </p>
+    
+                    <input type="submit" name="submit" id="submit" value="SUBMIT"> 
+                    
+                </form>
+
+                <p>Thank you for sign-up with us.</p>
+             
+            </div>
+        </div> 
+    </div>
+
+    
+    <script>
+        
+        function run()
+        {
+            var radios = document.getElementsByName('account');
+            var acc;
+            
+            for (var i = 0, length = radios.length; i < length; i++) 
+            {
+                if (radios[i].checked) 
+                {
+                    acc = radios[i].value;
+                    break;
+                }
+            }
+
+            //alert(acc);
+            if(acc == "student")
+            {
+                location = "homeS.html";
+            }
+            else
+            {
+                location = "homeF.html";
+            }
+
+            return false;
+
+        }
+
+        document.getElementById("signup").addEventListener("click", function()
+        {
+            document.querySelector(".popSignUp").style.display = "flex";
+        });
+
+        document.querySelector(".closeSU").addEventListener("click", function()
+        {
+            document.querySelector(".popSignUp").style.display = "none";
+        });
+
+        document.getElementById("signin").addEventListener("click", function()
+        {
+            document.querySelector(".popSignIn").style.display = "flex";
+        });
+
+        document.querySelector(".close").addEventListener("click", function()
+        {
+            document.querySelector(".popSignIn").style.display = "none";
+        });
+
+        document.getElementById("reset").addEventListener("click", function()
+        {
+            document.querySelector(".popSignIn").style.display = "none";
+            document.querySelector(".popForget").style.display = "flex";
+        });
+
+        document.querySelector(".closeForget").addEventListener("click", function()
+        {
+            document.querySelector(".popForget").style.display = "none";
+        });
+        
+
+    </script>
+</body>
+</html>
