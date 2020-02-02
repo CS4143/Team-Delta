@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block css_tag %}{% endblock %}
+    {% block js_tag %}{% endblock %}
+    <title>{% block title_tag %}{% endblock %}</title>
+</head>
+<body>
+    {% block body_content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+from django.shortcuts import render
+from django.contrib.auth import login, logout
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
+from django.contrib.auth.models import User
+from django.shortcuts import redirect
+
+from . import forms
+
+class LoginView(generic.FormView):
+    form_class = AuthenticationForm
+    success_url = reverse_lazy('instructor:instructor')
+    template_name = 'accounts/login.html'
+    
+    def get_form(self, form_class=None):
+        if form_class is None:
+            form_class = self.get_form_class()
+        return form_class(self.request, **self.get_form_kwargs())
+      
+    def form_valid(self, form):
+        if form.data['account'] == 'student':
+            self.success_url = reverse_lazy('student:student')
+
+        login(self.request, form.get_user())
+        return super().form_valid(form)
+
+class SignUpView(generic.CreateView):
+    form_class = forms.UserCreateForm
+    success_url = reverse_lazy('instructor:instructor')
+    template_name = "accounts/signup.html"
+
+    def form_valid(self, form):
+        try:
+            if form.data['is_student'] == 'on':
+                self.success_url = reverse_lazy('student:student')
+        except:
+            return super().form_valid(form)
+
+        return super().form_valid(form)
+
+class LogoutView(generic.RedirectView):
+    url = reverse_lazy('accounts:login')
+    
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return super().get(request, *args, **kwargs)

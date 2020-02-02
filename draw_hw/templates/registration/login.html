@@ -1,0 +1,92 @@
+{% extends "index.html" %}
+{% block title_tag %}Login{% endblock %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block css_tag %}<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">{% endblock %}
+
+{% block body_content %}
+<body>
+    <div id="main">
+        <div id="name">
+            <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
+            <hr size="3">
+        </div>
+
+        <br>
+        <button id="signin">SIGN IN</button> 
+        <br><br>
+        <a href="{% url 'accounts:signup' %}">
+            <button id="signup">SIGN UP</button>
+        </a>
+
+        <div id="footer">
+            Copyright &copy; drawHW 2020
+        </div> 
+    </div>
+
+    <div class="popSignIn">
+        <div id="container">
+            <div class="close">+</div>
+            <div id="logo" class="logoClass">
+                <img src="{% static 'accounts/pic/drawHW.png' %}" >
+            </div >
+            <hr style="margin-top: 0; padding-top: 0;">
+
+            <div id="loginbox">
+                <h2 style="margin-top:0;">SIGN IN</h2>
+                <form name="login" method="POST">
+                    {% csrf_token %}
+
+                    <input type="radio" name="account" value="student" id="student" checked> 
+                    <label for="student">Student</label>
+                    
+                    <input type="radio" name="account" value="faculty" id="faculty">
+                    <label for="faculty">Faculty</label> 
+
+                    <br><br>
+                    <p class="table">
+                        <label for="username">USERNAME</label><br>
+                        {% render_field form.username class+="inputBox" placeholder="Username" id="username" attr="required" %}
+                    </p>
+                    <p class="table">
+                        <label for="password">PASSWORD</label><br>
+                        {% render_field form.password class+="inputBox" placeholder="Password" id="password" attr="required" %}
+                        <br>
+                    </p>
+
+                    <input type="submit" name="submit" id="submit" value="Sign In"> <br><br>
+                </form>
+
+                <button id="reset">Reset Password</button>  
+            </div>
+        </div> 
+    </div>
+
+    <div class="popForget">
+        <div id="container">
+            <div class="closeForget">+</div>
+            <div id="logo" class="logoClass">
+                <img src="{% static 'accounts/pic/drawHW.png' %}" >
+            </div >
+    
+            <hr style="margin-top: 0; padding-top: 0;">
+            <div id="loginbox">
+                <h2 style="margin-top:0;">RESET PASSWORD</h2>
+                <form name="forget" method="POST" action="{% url 'accounts:reset' %}">
+                    {% csrf_token %}
+                    
+                    <br><br>
+                    <h2>Click to the button bellow and follow the instruction.</h2>
+                    <br><br>
+
+                    <input type="submit" name="submitF" id="submitF" value="Reset"> <br><br><br>
+                </form>
+             
+            </div>
+        </div> 
+    </div>
+
+    {% block js_tag %}<script src="{% static 'accounts/functions.js' %}"></script>{% endblock %}
+</body>
+{% endblock %}

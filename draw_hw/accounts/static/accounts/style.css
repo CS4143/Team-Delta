@@ -1,0 +1,287 @@
+html 
+{ 
+    background: url("pic/tri.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Helvetica Neue,helvetica,arial,sans-serif;
+}
+
+body
+{
+    text-align: center;
+    color: black;
+    font-family: Helvetica Neue,helvetica,arial,sans-serif;
+    
+    
+}
+
+#loginbox
+{
+    clear: both;
+    background-color: white;
+    width: auto;
+    max-width: 100%;
+    height: 63%;
+    padding: 0px 0px;
+    position: relative;
+    color: black;
+
+    border-style: solid;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-width: 3px;
+    
+    border-color:  #cf1717;
+}
+
+#logo
+{
+    width: 40%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    
+    border-color:  #cf1717;
+    overflow: hidden;
+    border-radius: 15px;
+
+}
+
+.logoClass img
+{
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#name
+{
+    min-width: fit-content;
+    background-color: white;
+    color: black;
+
+    border-style: solid;
+    border-width: 3px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-color:  #cf1717;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+
+
+    
+    border-radius: 15px;
+    
+}
+
+#container
+{
+    background-color: white;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 600px;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    font-family: Helvetica Neue,helvetica,arial,sans-serif;
+    
+}
+
+#footer
+{
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    clear: both;
+    text-align: center;
+    color: black;
+}
+
+strong
+{
+    font-size: xx-large;
+    color:  #cf1717;
+}
+
+#top
+{
+    
+    width: 100%;
+    height: 112px;
+    border-radius: 15px;
+}
+
+.inputBox
+{
+    width: 300px;
+    display: block;
+    margin: 5px auto;
+    padding: 5px;
+    height: 30px;
+    background-color: whitesmoke;
+    border: none;
+    font-size: 1.1875rem;
+
+    border-bottom: 1px solid black;
+
+    overflow: visible;
+
+    
+}
+
+.inputBox:focus
+{
+    border: 2px solid #cf1717;
+    background-color: rgb(255, 187, 187);
+    color: black;
+    outline: none;
+}
+
+button, input[type="submit"]
+{
+    
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width: 180px;
+    background-color: #cf1717;
+    color: white;
+    border-radius: 25px;
+    border-color: white;
+    border-style: solid;
+    outline: none;
+    
+}
+
+button:hover, input[type="submit"]:hover
+{
+    
+    border-color: #cf1717;
+    border-style: solid;
+    border-width: 2px;
+    background-color: white;
+    color: black;
+}
+
+hr
+{
+    color: #cf1717;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.popSignIn
+{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popForget
+{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popSignUp
+{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media only screen and (max-width: 600px) 
+{
+    #container
+    {
+        width: 95%;
+        height: fit-content;
+        padding-bottom: 5px;
+    }
+}
+
+.close, .closeForget, .closeSU
+{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 43px;
+    transform: rotate(45deg);
+    color: black;
+    cursor: pointer;
+}
+
+input[type=radio] 
+{
+    display:none; 
+    margin:10px;
+}
+
+/*
+Change the look'n'feel of labels (which are adjacent to radiobuttons).
+Add some margin, padding to label
+*/
+input[type=radio] + label 
+{
+    display:inline-block;
+    margin:-2px;
+    padding: 4px 12px;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    border: 1px whitesmoke solid;
+
+}
+
+input[type=radio] + label:hover
+{
+    border: 1px #cf1717 dashed;
+} 
+
+/*
+Change background color for label next to checked radio button
+to make it look like highlighted button
+*/
+input[type=radio]:checked + label 
+{ 
+    background-image: none;
+    background-color:#cf1717;
+    color: white;
+}
