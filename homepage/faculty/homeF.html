@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="faculty_styles.css">
+    
+</head>
+</head>
+<body>
+    <div id="name">
+        <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
+        <hr size="3">
+    </div>
+    
+
+    <div id="container">
+        <div id="topNav">
+            
+            <h1>Home Faculty</h1>
+        </div>
+        <div id="sideNav">
+            <div>
+                <h3 style="margin: 0; color: black; text-align: center; background-color: lightgray;">Courses:</h3>
+            </div>
+            
+            <ul>
+                <li><a href="class.html">class1</a></li>
+                <li><a href="#">class2</a></li>
+                <li><a href="#">class3</a></li>
+                <li><a href="#">class4</a></li>
+                <li><a href="#">class2</a></li>
+                <li><a href="#">class3</a></li>
+                <li><a href="#">class4</a></li>
+                <li><a href="#">class2</a></li>
+                <li><a href="#">class3</a></li>
+                <li><a href="#">class4</a></li>
+                <li><a href="#">class2</a></li>
+                <li><a href="#">class3</a></li>
+                <li><a href="#">class4</a></li>
+                <li><a href="#">class2</a></li>
+                <li><a href="#">class3</a></li>
+                <li><a href="#">class4</a></li>
+                
+            </ul>
+
+        </div>
+        <div id="info">
+            <h3 style="color: black; text-align: center; background-color: lightgray;">Adding/Editing Courses</h3>
+            
+            <button id="addCourseButton">Add Course</button> <br><br>
+            <button id="editCourseButton">Edit Course</button> <br><br>
+            <form action="" class="addCourseForm">
+                <input type="number" id="number" placeholder="Course ID" required>
+                <input type="text" name="classname" id="classname" placeholder="Course Name" required>
+                <input type="text" name="professorName" id="professorName" placeholder="Instructor Name" required> 
+                <input type="text" name="description" placeholder="Course Description (Optional)" id="description">
+                <input type="submit" name="submit" id="submit">
+            </form>
+
+            <form action="" class="editCourseForm">
+                <label for="courses">Choose a Course:</label>
+
+                <select id="courses">
+                    <option value="class1">class1</option>
+                    <option value="class2">class2</option>
+                    <option value="class3">class3</option>
+                    <option value="class4">class4</option>
+                </select>
+
+                <input type="number" id="numberE" placeholder="Course ID" required>
+                <input type="text" name="classnameE" id="classnameE" placeholder="Course Name" required>
+                <input type="text" name="professorNameE" id="professorNameE" placeholder="Instructor Name" required> 
+                <input type="text" name="descriptionE" placeholder="Course Description (Optional)" id="descriptionE">
+                <input type="submit" name="submitE" id="submitE">
+            </form>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        Copyright &copy; drawHW 2020
+    </div> 
+    <script src="faculty_home.js"></script>
+    
+</body>
+</html>
