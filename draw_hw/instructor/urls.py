@@ -4,5 +4,6 @@ from django.urls import path
 app_name = 'instructor'
 
 urlpatterns = [
-    path('', views.TestView.as_view(), name='instructor'), 
+    path('', views.create_course, name='instructor'), 
+    path('detail/', views.course_detail, name='course_detail')
 ]

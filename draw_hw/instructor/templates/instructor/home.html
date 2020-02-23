@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+{% block title_tag %}Faculty Home{% endblock %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'instructor/faculty_styles.css' %}">
+{% endblock %}
+
+{% block body_content %}
+    <div id="name">
+        <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
+        <hr size="3">
+    </div>
+
+    <div id="container">
+        <div id="topNav">
+            <h1>Home Faculty</h1>
+        </div>
+        <div id="sideNav">
+            <div>
+                <h3 style="margin: 0; color: black; text-align: center; background-color: lightgray;">Courses:</h3>
+            </div>
+            
+            <ul>
+                {% for course in courses %}
+                    <li><a href="{% url 'instructor:course_detail' %}">{{ course.class_name }}</a></li>
+                {% endfor %}            
+            </ul>
+        </div>
+        <div id="info">
+            <h3 style="color: black; text-align: center; background-color: lightgray;">Adding/Editing Courses</h3>
+            
+            <button id="addCourseButton">Add Course</button> <br><br>
+            <button id="editCourseButton">Edit Course</button> <br><br>
+            <form action="" class="addCourseForm" method="POST">
+                {% csrf_token %}
+                
+                {% render_field c_form.code type="number" id="number" placeholder="Course ID" attr="required" %}
+
+                {% render_field c_form.class_name type="text" name="classname" id="classname" placeholder="Course Name" attr="required" %}
+                
+                {{ c_form.instructor }}
+
+                {% render_field c_form.description name="description" type="text" id="description" placeholder="Course Description" attr="required" %}
+
+                <input type="submit" name="submit" id="submit">
+            </form>
+
+            <form action="" class="editCourseForm" method="POST">
+                {% csrf_token %}
+                <label for="courses">Choose a Course:</label>
+
+                <select id="courses">
+                    {% for course in courses %}
+                        <option value="class1">{{ course.class_name }}</option>
+                    {% endfor %}
+                </select>
+
+                <input type="number" id="numberE" placeholder="Course ID" required>
+                <input type="text" name="classnameE" id="classnameE" placeholder="Course Name" required>
+                <input type="text" name="professorNameE" id="professorNameE" placeholder="Instructor Name" required> 
+                <input type="text" name="descriptionE" placeholder="Course Description (Optional)" id="descriptionE">
+                <input type="submit" name="submitE" id="submitE">
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        Copyright &copy; drawHW 2020
+    </div> 
+    {% block js_tag %}<script src="{% static 'instructor/faculty_home.js' %}"></script>{% endblock %}
+<a href="{% url 'accounts:logout' %}">Logout</a>
+{% endblock %}

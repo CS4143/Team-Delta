@@ -8,12 +8,3 @@ class StudentRequiredMixin(LoginRequiredMixin):
             and not request.user.is_superuser:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
-
-class InstructorRequiredMixin(LoginRequiredMixin):
-    """Verify that the current user is authenticated."""
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated \
-            and request.user.is_student \
-            and not request.user.is_superuser:
-            return self.handle_no_permission()
-        return super().dispatch(request, *args, **kwargs)
