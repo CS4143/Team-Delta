@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>drawHW</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -14,9 +14,14 @@
     <div id="main">
         <div id="name">
             <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
-            <hr size="3">
+            <hr size="3" style="border-color:#cf1717" >
         </div>
         <br>
+        
+        <div class=homeimage>
+            <img src="pic/drawHW.png" alt="drawLogo">
+        </div>
+        
         <button id="signin">SIGN IN</button> 
         <br><br>
         <button id="signup">SIGN UP</button>
@@ -24,6 +29,7 @@
             Copyright &copy; drawHW 2020
         </div> 
     </div>
+    
     <div class="popSignIn">
         <div id="container">
 
@@ -31,7 +37,7 @@
             <div id="logo" class="logoClass">
                 <img src="pic/drawHW.png" >
             </div >
-            <hr style="margin-top: 0; padding-top: 0;">
+            <hr style="margin-top: auto; padding-top: auto;">
 
             <div id="loginbox">
                 <h2 style="margin-top:0;">SIGN IN</h2>
@@ -110,13 +116,14 @@
 
             <div class="closeSU">+</div>
             
-                <img style="width: 30%; float: left;"  src="pic/drawHW.png" >
-                <h2 style="margin-top: 35px; color:black;">SIGN UP</h2>
-            
-            
+                <div id="logo" class="logoClass">
+                    <img src="pic/drawHW.png" >
+                </div >
+                <hr style="margin-top: auto; padding-top: auto;">
+                
                 
             <div id="loginbox">
-                <hr>
+                <h2 style="margin-top: auto; color:black;">SIGN UP</h2>
                 <form name="login" onsubmit="">
                 
                     
@@ -155,7 +162,32 @@
             </div>
         </div> 
     </div>
-
+    
+    <div class="Clock"> 
+        <script>
+            function startTime() {
+                var today = new Date();
+                var year = today.getFullYear();
+                var month = today.getMonth();
+                var date = today.getDate();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txt').innerHTML = year + "-" + month + "-" + date + "  " + h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500);
+                }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+                }  
+        </script>
+        <body onload="startTime()">
+            <div id="txt"></div>
+        </body>
+    </div>
+    
     <script src="functions.js"></script>
     
 </body>

@@ -3,6 +3,8 @@ function run()
     var radios = document.getElementsByName('account');
     var acc;
     
+    
+    
     for (var i = 0, length = radios.length; i < length; i++) 
     {
         if (radios[i].checked) 
@@ -56,3 +58,7 @@ document.querySelector(".closeForget").addEventListener("click", function()
 {
     document.querySelector(".popForget").style.display = "none";
 });
+
+
+
+

@@ -37,7 +37,7 @@ body
 }
 #logo
 {
-    width: 40%;
+    width: 80%;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
@@ -61,27 +61,27 @@ body
 
 #name
 {
-    min-width: fit-content;
-    background-color: white;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.3);
     color: black;
-
+    border-style: solid
+    border-width: 5px;
     border-style: solid;
-    border-width: 3px;
     border-left: 0;
+    border-style: solid;
     border-right: 0;
+    border-style: solid;
     border-top: 0;
     border-color:  #cf1717;
     margin-left: auto;
     margin-right: auto;
-    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 100%;
     overflow: hidden;
-
-
-    
-    border-radius: 15px;
-    
+    border-radius: 15px;   
 }
+
 #container
 {
     background-color: white;
@@ -89,7 +89,7 @@ body
     margin-left: auto;
     margin-right: auto;
     width: 400px;
-    height: 600px;
+    height: 700px;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
     border-radius: 15px;
@@ -116,7 +116,6 @@ strong
 }
 #top
 {
-    
     width: 100%;
     height: 112px;
     border-radius: 15px;
@@ -127,12 +126,12 @@ strong
     width: 300px;
     display: block;
     margin: 5px auto;
-    padding: 5px;
+    padding: 1px;
     height: 30px;
     background-color: whitesmoke;
     border: none;
     font-size: 1.1875rem;
-
+    box-sizing: 
     border-bottom: 1px solid black;
 
     overflow: visible;
@@ -150,10 +149,11 @@ button, input[type="submit"]
 {
     
     border-width: 2px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     padding: 15px;
-    width: 180px;
+    width: 200px;
     background-color: #cf1717;
     color: white;
     border-radius: 25px;
@@ -271,4 +271,26 @@ input[type=radio]:checked + label
     background-image: none;
     background-color:#cf1717;
     color: white;
+}
+
+.homeimage img{
+    float: inherit;
+    height: 250px;
+    width: 250px;
+    background-color: rgba(255, 255, 255,0.3);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20;
+    padding-bottom: 20;
+    position: relative;
+    
+    border-color:  #cf1717;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.Clock{
+    margin-top: 25px;
+    font-size: 25px;
 }
