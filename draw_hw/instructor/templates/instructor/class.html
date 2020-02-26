@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block title_tag %}Course Detail{% endblock %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'instructor/faculty_styles.css' %}">
+{% endblock %}
+{% block body_content %}
+    <div id="name">
+        <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
+        <hr size="3">
+    </div>
+
+    <div id="container">
+        <div id="topNav">
+            
+            <ul>
+                <li><a href="{% url 'instructor:instructor' %}">Home</a></li>
+                <li><a href="#">Edit Homework</a></li>
+                <li><a href="#">Edit Grade</a></li>
+
+            </ul>
+        </div>
+        <div id="sideNav">
+            <h3 style="margin: 0; color: black; text-align: center; background-color: lightgray;">Courses:</h3>
+            <ul>
+                {% for course in courses %}
+                    <li><a href="{% url 'instructor:course_detail' %}">{{ course.class_name }}</a></li>
+                {% endfor %} 
+            </ul>
+
+        </div>
+        <div id="info">
+
+        </div>
+    </div>
+    <div id="footer">
+        Copyright &copy; drawHW 2020
+    </div> 
+
+    <script>
+        
+    </script>
+
+{% endblock %}
