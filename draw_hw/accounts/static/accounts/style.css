@@ -7,7 +7,6 @@ html
     background-size: cover;
     font-family: Helvetica Neue,helvetica,arial,sans-serif;
 }
-
 body
 {
     text-align: center;
@@ -16,14 +15,13 @@ body
     
     
 }
-
 #loginbox
 {
     clear: both;
     background-color: white;
     width: auto;
     max-width: 100%;
-    height: 63%;
+    height: 73%;
     padding: 0px 0px;
     position: relative;
     color: black;
@@ -37,10 +35,9 @@ body
     
     border-color:  #cf1717;
 }
-
 #logo
 {
-    width: 40%;
+    width: 80%;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
@@ -61,29 +58,31 @@ body
     margin-left: auto;
     margin-right: auto;
 }
-
+.active
+{
+    background-color: rgb(216,10,10);
+}
 #name
 {
-    min-width: fit-content;
-    background-color: white;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.3);
     color: black;
-
     border-style: solid;
-    border-width: 3px;
+    border-width: 5px;
+    border-style: solid;
     border-left: 0;
+    border-style: solid;
     border-right: 0;
+    border-style: solid;
     border-top: 0;
     border-color:  #cf1717;
     margin-left: auto;
     margin-right: auto;
-    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 100%;
     overflow: hidden;
-
-
-    
-    border-radius: 15px;
-    
+    border-radius: 15px;   
 }
 
 #container
@@ -93,7 +92,7 @@ body
     margin-left: auto;
     margin-right: auto;
     width: 400px;
-    height: 600px;
+    height: 700px;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
     border-radius: 15px;
@@ -103,7 +102,6 @@ body
     font-family: Helvetica Neue,helvetica,arial,sans-serif;
     
 }
-
 #footer
 {
     width: 100%;
@@ -114,19 +112,16 @@ body
     text-align: center;
     color: black;
 }
-
 strong
 {
     font-size: xx-large;
     color:  #cf1717;
 }
-
 #top
 {
-    
     width: 100%;
     height: 112px;
-    border-radius: 15px;
+    border-radius: 100px;
 }
 
 .inputBox
@@ -134,19 +129,17 @@ strong
     width: 300px;
     display: block;
     margin: 5px auto;
-    padding: 5px;
+    padding: 1px;
     height: 30px;
     background-color: whitesmoke;
     border: none;
     font-size: 1.1875rem;
-
     border-bottom: 1px solid black;
 
     overflow: visible;
 
     
 }
-
 .inputBox:focus
 {
     border: 2px solid #cf1717;
@@ -154,15 +147,15 @@ strong
     color: black;
     outline: none;
 }
-
 button, input[type="submit"]
 {
     
     border-width: 2px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     padding: 15px;
-    width: 180px;
+    width: 200px;
     background-color: #cf1717;
     color: white;
     border-radius: 25px;
@@ -188,7 +181,6 @@ hr
     margin-left: 15%;
     margin-right: 15%;
 }
-
 .popSignIn
 {
     background-color: rgba(0, 0, 0, 0.6);
@@ -201,7 +193,6 @@ hr
     align-items: center;
 
 }
-
 .popForget
 {
     background-color: rgba(0, 0, 0, 0.6);
@@ -269,12 +260,10 @@ input[type=radio] + label
     border: 1px whitesmoke solid;
 
 }
-
 input[type=radio] + label:hover
 {
     border: 1px #cf1717 dashed;
 } 
-
 /*
 Change background color for label next to checked radio button
 to make it look like highlighted button
@@ -284,4 +273,26 @@ input[type=radio]:checked + label
     background-image: none;
     background-color:#cf1717;
     color: white;
+}
+
+.homeimage img{
+    float: inherit;
+    height: 250px;
+    width: 250px;
+    background-color: rgba(255, 255, 255,0.3);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20;
+    padding-bottom: 20;
+    position: relative;
+    
+    border-color:  #cf1717;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.Clock{
+    margin-top: 25px;
+    font-size: 25px;
 }
