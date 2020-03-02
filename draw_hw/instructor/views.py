@@ -25,13 +25,14 @@ def create_course(request):
     return render(request, 'instructor/home.html', {'c_form': c_form, 
                                                     'courses': courses})
 @login_required()
-def course_detail(request):
+def course_detail(request, pk):
     # deny access for certain users
     if request.user.is_student or \
         request.user.is_superuser:
             return HttpResponseForbidden()
 
     courses = Course.objects.filter(instructor=request.user)
+    courses = courses.filter(pk=pk)
     if request.method == 'POST':
         c_form = CourseForm(request.POST)
         if c_form.is_valid():
