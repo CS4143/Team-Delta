@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="faculty_styles.css">
+</head>
+</head>
+
+<body>
+    <div id="name">
+        <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
+        <hr size="3">
+    </div>
+
+    <div id="container">
+        <div id="topNav">
+            
+            <ul>
+                <li><a href="homeF.html">Home</a></li>
+                <li><a href="#">Edit Homework</a></li>
+                <li><a href="#">Edit Grade</a></li>
+
+            </ul>
+        </div>
+        <div id="sideNav">
+            <h3 style="margin: 0; color: black; text-align: center; background-color: lightgray;">Courses:</h3>
+            <ul>
+                <li><a class="active" href="#">class1</a></li>
+                <li><a href="#">class2</a></li>
+                <li><a href="#">class3</a></li>
+                <li><a href="#">class4</a></li>
+                
+            </ul>
+
+        </div>
+        
+        <div id="info">
+            <h3 style="color: black; text-align: center; background-color: lightgray;">Editing Courses</h3>
+            <button id="editCourseButton">Edit Course</button> <br><br>
+            <form action="" class="editCourseForm">
+                <label for="courses">Choose a Course:</label>
+                <select id="courses">
+                    <option value="class1">class1</option>
+                    <option value="class2">class2</option>
+                    <option value="class3">class3</option>
+                    <option value="class4">class4</option>
+                </select>
+                <input type="number" id="numberE" placeholder="Course ID" required>
+                <input type="text" name="classnameE" id="classnameE" placeholder="Course Name" required>
+                <input type="text" name="professorNameE" id="professorNameE" placeholder="Instructor Name" required> 
+                <input type="text" name="descriptionE" placeholder="Course Description (Optional)" id="descriptionE">
+                <input type="submit" name="submitE" id="submitE">
+            </form>
+        </div>
+    </div>
+    
+    <div id="footer">
+        Copyright &copy; drawHW 2020
+    </div> 
+
+    <script src="faculty_class.js" ></script>
+    
+</body>
+</html>
