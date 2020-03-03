@@ -38,21 +38,3 @@ def course_detail(request):
             c_form.save()
             return HttpResponseRedirect(reverse_lazy('instructor:instructor'))
     return render(request, 'instructor/class.html', {'courses': courses})
-
-
-@login_required()
-def edit_homework(request):
-    # deny access for certain users
-    if request.user.is_student or \
-        request.user.is_superuser:
-            return HttpResponseForbidden()
-
-    courses = Course.objects.filter(instructor=request.user)
-    if request.method == 'POST':
-        c_form = CourseForm(request.POST)
-        if c_form.is_valid():
-            c_form.save()
-            return HttpResponseRedirect(reverse_lazy('instructor:editHw'))
-    return render(request, 'instructor/editHw.html', {'courses': courses})
-
-

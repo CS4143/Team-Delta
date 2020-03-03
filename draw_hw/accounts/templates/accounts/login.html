@@ -2,6 +2,7 @@
 {% block title_tag %}Login{% endblock %}
 {% load static %}
 {% load widget_tweaks %}
+
 {% block css_tag %}<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">{% endblock %}
 
 {% block body_content %}
@@ -9,17 +10,14 @@
     <div id="main">
         <div id="name">
             <h3> <strong>D</strong>aiki<strong>R</strong>oth<strong>A</strong>bhijit<strong>W</strong>enhao HomeWork.com</h3>
-            <hr size="3" style="border-color:#cf1717" >
+            <hr size="3">
         </div>
 
-        <div class=homeimage>
-            <img src="{% static 'accounts/pic/drawHW.png' %}" alt="drawLogo">
-        </div>
-
-        <button id="signin" onclick="ClickSI()">SIGN IN</button> 
+        <br>
+        <button id="signin">SIGN IN</button> 
         <br><br>
         <a href="{% url 'accounts:signup' %}">
-            <button id="signup" onclick="ClickSU()">SIGN UP</button>
+            <button id="signup">SIGN UP</button>
         </a>
 
         <div id="footer">
@@ -29,15 +27,11 @@
 
     <div class="popSignIn">
         <div id="container">
-
-            <div class="close" onclick="ClickSI()">+</div>
-            <!--<div class="closeSU">+</div>-->
-
+            <div class="close">+</div>
             <div id="logo" class="logoClass">
                 <img src="{% static 'accounts/pic/drawHW.png' %}" >
             </div >
-
-            <hr style="margin-top: auto; padding-top: auto;">
+            <hr style="margin-top: 0; padding-top: 0;">
 
             <div id="loginbox">
                 <h2 style="margin-top:0;">SIGN IN</h2>
@@ -51,20 +45,17 @@
                     <label for="faculty">Faculty</label> 
 
                     <br><br>
-
                     <p class="table">
-                        <label for="username">USERNAME</label>
-                        {% render_field form.username class+="inputBox" type="text" id="username" name="username" placeholder="Username" attr="required" %}
+                        <label for="username">USERNAME</label><br>
+                        {% render_field form.username class+="inputBox" placeholder="Username" id="username" attr="required" %}
                     </p>
                     <p class="table">
-                        <label for="password">PASSWORD</label>
-                        {% render_field form.password class+="inputBox" type="password" name="password" id="password" placeholder="Password" attr="required" %}
+                        <label for="password">PASSWORD</label><br>
+                        {% render_field form.password class+="inputBox" placeholder="Password" id="password" attr="required" %}
+                        <br>
                     </p>
 
-                    <input type="submit" name="submit" id="submit" value="Sign In"> 
-                    
-                    <br><br>
-                    
+                    <input type="submit" name="submit" id="submit" value="Sign In"> <br><br>
                 </form>
 
                 <button id="reset">Reset Password</button>  
@@ -75,7 +66,6 @@
     <div class="popForget">
         <div id="container">
             <div class="closeForget">+</div>
-
             <div id="logo" class="logoClass">
                 <img src="{% static 'accounts/pic/drawHW.png' %}" >
             </div >
@@ -97,31 +87,6 @@
         </div> 
     </div>
 
-    <div class="Clock"> 
-        <script>
-            function startTime() {
-                var today = new Date();
-                var year = today.getFullYear();
-                var month = today.getMonth();
-                var date = today.getDate();
-                var h = today.getHours();
-                var m = today.getMinutes();
-                var s = today.getSeconds();
-                m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('txt').innerHTML = year + "-" + month + "-" + date + "  " + h + ":" + m + ":" + s;
-                var t = setTimeout(startTime, 500);
-                }
-            function checkTime(i) {
-                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-                return i;
-                }  
-        </script>
-        <body onload="startTime()">
-            <div id="txt"></div>
-        </body>
-    </div>
- 
     {% block js_tag %}<script src="{% static 'accounts/functions.js' %}"></script>{% endblock %}
 </body>
 {% endblock %}
