@@ -1,8 +1,7 @@
 {% extends "index.html" %}
-{% block title_tag %}Login{% endblock %}
+{% block title_tag %}Signup{% endblock %}
 {% load static %}
 {% load widget_tweaks %}
-
 {% block css_tag %}<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">{% endblock %}
 
 {% block body_content %}
@@ -20,43 +19,52 @@
     </div>
     
     <div class="popSignUp" style="display: flex">
-        <div id="container">            
-            <img style="width: 30%; float: left;"  src="{% static 'accounts/pic/drawHW.png' %}">
-            <h2 style="margin-top: 35px; color:black;">SIGN UP</h2>
+        <div id="container">
+
+            <div class="close" onclick="ClickSU()">+</div>
+
+            <div id="logo" class="logoClass">
+                <img src="{% static 'accounts/pic/drawHW.png' %}" >
+            </div >
             
+            <hr style="margin-top: auto; padding-top: auto;">
+
             <div id="loginbox">
-                <hr>
+                <h2 style="margin-top: auto; color:black;">SIGN UP</h2>
                 <form name="login" method="POST">
                     {% csrf_token %}
                     
+                    <input type="radio" name="accountSU" value="studentSU" id="studentSU" checked> 
+                    <label for="studentSU">Student</label>
+
+                    <input type="radio" name="accountSU" value="facultySU" id="facultySU">
+                    <label for="facultySU">Faculty</label>
+
+                    <br><br>
+
                     <p class="table">
-                        <label for="is_student">IS STUDENT:</label>
-                        {% render_field form.is_student id="is_student" name="is_student" attr="required" %}
+                        <label for="emailSU">EMAIL</label>
+                        {% render_field form.email class+="inputBox" type="email" id="emailSU" name="emailSU" placeholder="email address" attr="required" %}
                     </p>
                     <p class="table">
-                        <label for="username">USERNAME</label><br>
-                        {% render_field form.username class+="inputBox" placeholder="Username" id="usernameSU" name="usernameSU" attr="required" %}
+                        <label for="usernameSU">USERNAME</label><br>
+                        {% render_field form.username class+="inputBox" type="text" id="usernameSU" name="usernameSU" placeholder="Username" attr="required" %}
                     </p>
                     <p class="table">
-                        <label for="emailSU">EMAIL</label><br>
-                        {% render_field form.email class+="inputBox" placeholder="Email address" id="emailSU" name="emailSU" attr="required" %}
-                    </p>
-                    <p class="table">
-                        <label for="password1">PASSWORD</label><br>
-                        {% render_field form.password1 class+="inputBox" placeholder="Password" id="passwordSU" name="passwordSU" attr="required" %}
+                        <label for="passwordSU">PASSWORD</label><br>
+                        {% render_field form.password1 class+="inputBox" type="password" name="passwordSU" id="passwordSU" placeholder="Password" attr="required" %}
                     </p>
                     <p class="table">
                         <label for="cPasswordSU">CONFIRM PASSWORD</label><br>
-                        {% render_field form.password2 class+="inputBox" placeholder="Confirm Password" id="cPasswordSU" name="cPasswordSU" attr="required" %}
-                        <br>
+                        {% render_field form.password2 class+="inputBox" type="password" name="cPasswordSU" id="cPasswordSU" placeholder="Confirm Password" attr="required" %}
                     </p>
 
-                    <input type="submit" name="submit" id="submit" value="Sign Up"> 
+                    <input type="submit" name="submit" id="submit" value="SUBMIT"> 
                 </form>
+                <p>Thank you for sign-up with us.</p>
             </div>
         </div> 
     </div>
-
-    {% block js_tag %}<script src="{% static 'accounts/functions.js' %}"></script>{% endblock %}
+{% block js_tag %}<script src="{% static 'accounts/functions.js' %}"></script>{% endblock %}
 </body>
 {% endblock %}
