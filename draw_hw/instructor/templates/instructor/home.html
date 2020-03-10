@@ -33,7 +33,7 @@
             
             <button id="addCourseButton">Add Course</button> <br><br>
             <button id="editCourseButton">Edit Course</button> <br><br>
-            <form action="{% url 'instructor:instructor' %}" class="addCourseForm" method="POST">
+            <form action="" class="addCourseForm" method="POST">
                 {% csrf_token %}
                 
                 {% render_field c_form.code type="number" id="number" placeholder="Course ID" attr="required" %}
