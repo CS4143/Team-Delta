@@ -14,10 +14,12 @@
     </div>
 
     <div id="container">
+
         <div id="topNav">
             <h1>Home Faculty</h1>
             <a class="signout" href="{% url 'accounts:logout' %}">Logout</a>
         </div>
+
         <div id="sideNav">
             <div>
                 <h3 style="margin:0; height: 40px; line-height: 40px; padding: 5px; padding-top:0px; color: black; text-align: center; background-color: white;">Courses:</h3>
@@ -29,6 +31,7 @@
                 {% endfor %}            
             </ul>
         </div>
+
         <div id="info">
             <h3 style="color: black; text-align: center; background-color: lightgray;">Adding Course</h3>
             
@@ -45,6 +48,7 @@
                 <input type="submit" name="submit" id="submit">
             </form>
         </div>
+        
     </div>
 
     {% if c_form.errors %}

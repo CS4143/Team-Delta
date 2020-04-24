@@ -3,9 +3,9 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block css_tag %}
-    <link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'instructor/extra.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'instructor/faculty_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'instructor/extra.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'instructor/faculty_styles.css' %}">
 {% endblock %}
 {% block body_content %}
     <div id="name">
@@ -33,7 +33,7 @@
             </h3>
             <ul>
                 {% for assignment in assignments %}
-                    <li><a href="{% url 'instructor:add_answers' pk assignment.pk %}">{{ assignment.name }}</a></li>
+                    <li><a href="{% url 'instructor:edit_homework' pk assignment.pk %}">{{ assignment.name }}</a></li>
                 {% endfor %}
                 <li><a href="#" onclick="history.go(-1)">Go Back</a></li>
             </ul>
